@@ -1,0 +1,118 @@
+.apartment {
+    background: #e7e5e5;
+    padding: 16px;
+}
+
+.blockCards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.blockCards .card {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.card span {
+    background-color: #1B58A4;
+    margin-right: 16px;
+    border-radius: 50%;
+    padding: 8px 10px;
+}
+
+.card .icon {
+    width: 42px;
+    height: 42px;
+    color: #fff;
+}
+
+.blockCards .card p {
+    font-size: 18px;
+}
+
+.blockCards .card h5 {
+    font-size: 42px;
+}
+
+.content {
+    margin-top: 16px;
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    min-height: 66.7vh;
+}
+
+.content h1 {
+    font-size: 42px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.content .icon {
+    width: 42px;
+    height: 42px;
+    margin-right: 8px;
+}
+
+.blockTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blockTitle .button {
+    background-color: #1B58A4;
+    color: white;
+    border: none;
+    padding: 8px 16px 8px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.blockTitle .button .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.content th,
+.content td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.simBack {
+    background-color: #eefdee;
+    padding: 8px 21px;
+    border-radius: 5rem;
+}
+
+.sim {
+    color: green;
+}
+
+.naoBack {
+    background-color: #ffefef;
+    padding: 8px 21px;
+    border-radius: 5rem;
+}
+
+.nao {
+    color: red;
+}

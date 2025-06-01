@@ -1,0 +1,28 @@
+.nav {
+    background: #1B58A4;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: 16px;
+}
+
+.nav p {
+    color: #fff;
+    cursor: pointer;
+    padding: 7px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav p:hover {
+    background: #fff;
+    color: #1B58A4;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
