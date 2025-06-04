@@ -16,16 +16,20 @@ const Login = () => {
         <div style={{ padding: '90px 125px' }}>
             <h1>Login</h1>
             <form onSubmit={handleSubmit}>
-                <label>Email</label>
-                <input type='email' id='email' name='email'
-                    value={email}
-                    onChange={({ target }) => setEmail(target.value)}
-                />
-                <label>Senha</label>
-                <input type='password' id='password' name='password'
-                    value={password}
-                    onChange={({ target }) => setPassword(target.value)}
-                />
+                <div className="form-group">
+                    <label>Email</label>
+                    <input type='email' id='email' name='email'
+                        value={email}
+                        onChange={({ target }) => setEmail(target.value)}
+                    />
+                </div>
+                <div className="form-group">
+                    <label>Senha</label>
+                    <input type='password' id='password' name='password'
+                        value={password}
+                        onChange={({ target }) => setPassword(target.value)}
+                    />
+                </div>
                 <button>Login</button>
             </form>
         </div>

@@ -1,0 +1,22 @@
+.wrapper{
+    display: block;
+    margin-bottom: 16px;
+}
+
+.wrapper label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.wrapper input{
+    display: block;
+    width: 100%;
+    padding: 14px 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    color: #333;
+}

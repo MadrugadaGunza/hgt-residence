@@ -8,6 +8,7 @@ import Admin from './pages/admin/Admin';
 
 // components
 import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const AppContent = () => {
         <Route path='/auth/*' element={<Auth />} />
         <Route path='/dashboard/*' element={<Admin />} />
       </Routes>
+      {!isDashboard && <Footer />}
     </>
   );
 };

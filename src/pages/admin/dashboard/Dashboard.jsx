@@ -1,6 +1,8 @@
-import { Home, HomeIcon, HousePlus, Users } from 'lucide-react';
 import styles from './Dashboard.module.css'
 import React from 'react';
+import { Home, HousePlus, Users } from 'lucide-react';
+import { VictoryBar, VictoryPie } from "victory";
+import { VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
 
 const Dashboard = () => {
     const [data, setData] = React.useState([]);
@@ -51,36 +53,77 @@ const Dashboard = () => {
                 </article>
             </div>
             <div className={styles.content}>
-                <h1><Home className={styles.icon} /> Apartamentos</h1>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Preço</th>
-                            <th>Disponível</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.length > 0 ? data.map((apartment) => {
-                            const formattedPrice = `${apartment.price.toLocaleString('pt-AO')} KZ`;
-                            return (
-                                <tr key={apartment.id}>
-                                    <td>{apartment.name}</td>
-                                    <td>{formattedPrice}</td>
-                                    <td className={apartment.availability ? styles.sim : styles.nao}>
-                                        <span className={apartment.availability ? styles.simBack : styles.naoBack}>
-                                            {apartment.availability ? 'Sim' : 'Não'}
-                                        </span>
-                                    </td>
-                                </tr>
-                            );
-                        }) : (
-                            <tr>
-                                <td colSpan="3">Carregando apartamentos...</td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
+                <article>
+                    <VictoryPie
+                        data={[
+                            { x: 'Clientes', y: 1 },
+                            { x: 'Apartamentos', y: data.length },
+                            { x: 'Reservas', y: 1 }
+                        ]}
+                        colorScale={['#5295de', '#1B58A4', '#2b77cc']}
+                        innerRadius={50}
+                        labelRadius={80}
+                        style={{
+                            data: {
+                                fillOpacity: 1,
+                                stroke: "#fff",
+                                strokeWidth: 2
+                            },
+                            labels: {
+                                fill: "#333",
+                                fontSize: 12,
+                                fontWeight: 'bold'
+                            }
+                        }}
+                    />
+                </article>
+                <article>
+                    <VictoryChart
+                        domainPadding={40}
+                        theme={VictoryTheme.material}
+                    >
+                        <VictoryAxis
+                            style={{
+                                axis: { stroke: '#555' },
+                                tickLabels: { fill: '#333', fontSize: 10 }
+                            }}
+                        />
+                        <VictoryAxis
+                            dependentAxis
+                            style={{
+                                axis: { stroke: '#ccc' },
+                                tickLabels: { fill: '#555', fontSize: 10 }
+                            }}
+                        />
+
+                        <VictoryBar
+                            data={[
+                                { x: 'Clientes', y: 1 },
+                                { x: 'Apartamentos', y: data.length },
+                                { x: 'Reservas', y: 1 }
+                            ]}
+                            style={{
+                                data: {
+                                    fill: '#1B58A4',
+                                    width: 35,
+                                    stroke: '#1B58A4',
+                                    strokeWidth: 2,
+                                    borderRadius: 50
+                                },
+                                labels: {
+                                    fill: '#000',
+                                    fontSize: 14,
+                                    fontWeight: 'bold'
+                                }
+                            }}
+                            labels={({ datum }) => `${datum.y}`}
+                            animate={{
+                                duration: 800,
+                                onLoad: { duration: 500 }
+                            }}
+                        />
+                    </VictoryChart>
+                </article>
             </div>
         </section>
     )

@@ -26,3 +26,69 @@
     color: #555;
     text-align: justify;
 }
+
+/* restarant */
+.restarantTitle {
+    margin-bottom: 16px;
+    font-size: 44px;
+    color: #333;
+    text-align: center;
+}
+
+.restarant ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.restarant .icon {
+    margin-right: 8px;
+    color: #1B58A4;
+}
+
+
+.restarant {
+    padding: 0 125px 90px 125px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.restarant article {
+    background-color: #fff;
+    padding: 16px;
+}
+
+.restarant article h5 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.restarant article div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.restarant div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.lazer {
+    padding: 0 125px 90px 125px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.park {
+    padding: 0 125px 90px 125px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
