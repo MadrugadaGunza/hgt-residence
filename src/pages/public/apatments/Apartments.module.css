@@ -1,0 +1,17 @@
+.apartments {
+    background: #efeef0;
+    padding: 50px 125px;
+}
+
+.title {
+    text-align: center;
+    font-size: 44px;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.apartment {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}

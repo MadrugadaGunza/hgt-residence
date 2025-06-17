@@ -1,45 +1,37 @@
 import styles from './Dashboard.module.css'
+// dependencies
 import React from 'react';
-import { Home, HousePlus, Users } from 'lucide-react';
+import { GET_APARTMENT } from '../../../services/apartment';
 import { VictoryBar, VictoryPie } from "victory";
 import { VictoryChart, VictoryAxis, VictoryTheme } from 'victory';
+// icon
+import { Home, HousePlus, Users } from 'lucide-react';
 
 const Dashboard = () => {
     const [data, setData] = React.useState([]);
 
     React.useEffect(() => {
         const fetchData = async () => {
-            try {
-                const response = await fetch('http://localhost:8000/api/apartment');
-                if (!response.ok) throw new Error('Erro na resposta da rede');
-                const { data } = await response.json();
-                setData(data);
-            } catch (error) {
-                console.error('Erro na requisição: ', error);
-            }
+            const { url, options } = GET_APARTMENT();
+            const response = await fetch(url, options);
+            const result = await response.json();
+            setData(result.data || []);
         };
         fetchData();
     }, []);
+
+    const availableApartments = data.filter((item) => item.availability === false).length;
 
     return (
         <section className={styles.dashboard}>
             <div className={styles.blockCards}>
                 <article className={styles.card}>
                     <span>
-                        <Users className={styles.icon} />
-                    </span>
-                    <div>
-                        <p>Clientes</p>
-                        <h5>100</h5>
-                    </div>
-                </article>
-                <article className={styles.card}>
-                    <span>
                         <Home className={styles.icon} />
                     </span>
                     <div>
                         <p>Apartamentos</p>
-                        <h5>{data.length}</h5>
+                        <h5>{data ? data.length : '0'}</h5>
                     </div>
                 </article>
                 <article className={styles.card}>
@@ -48,7 +40,16 @@ const Dashboard = () => {
                     </span>
                     <div>
                         <p>Reservas</p>
-                        <h5>350</h5>
+                        <h5>{availableApartments ? availableApartments : '0'}</h5>
+                    </div>
+                </article>
+                <article className={styles.card}>
+                    <span>
+                        <Users className={styles.icon} />
+                    </span>
+                    <div>
+                        <p>Clientes</p>
+                        <h5>{availableApartments ? availableApartments : '0'}</h5>
                     </div>
                 </article>
             </div>
@@ -56,9 +57,9 @@ const Dashboard = () => {
                 <article>
                     <VictoryPie
                         data={[
-                            { x: 'Clientes', y: 1 },
                             { x: 'Apartamentos', y: data.length },
-                            { x: 'Reservas', y: 1 }
+                            { x: 'Reservas', y: availableApartments },
+                            { x: 'Clienter', y: availableApartments }
                         ]}
                         colorScale={['#5295de', '#1B58A4', '#2b77cc']}
                         innerRadius={50}
@@ -98,9 +99,9 @@ const Dashboard = () => {
 
                         <VictoryBar
                             data={[
-                                { x: 'Clientes', y: 1 },
+                                { x: 'Clientes', y: availableApartments },
                                 { x: 'Apartamentos', y: data.length },
-                                { x: 'Reservas', y: 1 }
+                                { x: 'Reservas', y: availableApartments }
                             ]}
                             style={{
                                 data: {

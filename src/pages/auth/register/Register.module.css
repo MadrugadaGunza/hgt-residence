@@ -1,0 +1,38 @@
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 60vh;
+}
+
+.login h1 {
+    color: #333;
+    font-size: 42px;
+    font-family: 'Inter';
+    margin-bottom: 16px;
+    margin-top: 32px;
+}
+
+.login p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.login form {
+    width: 40rem;
+    min-width: 20rem;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 32px 0;
+}
+
+.login form p{
+    color: #f31;
+    background-color: #ffefef;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+}

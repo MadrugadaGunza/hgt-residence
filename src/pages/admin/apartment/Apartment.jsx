@@ -12,6 +12,7 @@ const Apartment = () => {
                 const response = await fetch('http://localhost:8000/api/apartment');
                 if (!response.ok) throw new Error('Network response was not ok');
                 const { data } = await response.json();
+                console.log(data)
                 setData(data);
             } catch (error) {
                 console.error('Fetch error:', error);
@@ -19,6 +20,9 @@ const Apartment = () => {
         };
         fetchData();
     }, []);
+
+    const availableApartments = data.filter(item => item.availability === false).length;
+
 
     return (
         <section className={styles.apartment}>
@@ -47,7 +51,7 @@ const Apartment = () => {
                     </span>
                     <div>
                         <p>Reservas</p>
-                        <h5>350</h5>
+                        <h5>{availableApartments}</h5>
                     </div>
                 </article>
             </div>
@@ -64,8 +68,8 @@ const Apartment = () => {
                         <tr>
                             <th>Nome</th>
                             <th>Preço</th>
-                            <th>Disponível</th>
-                            <th>Acções</th>
+                            <th style={{ width: '5rem' }}>Disponível</th>
+                            <th style={{ width: '3rem' }}>Acções</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,7 +85,7 @@ const Apartment = () => {
                                         </span>
                                     </td>
                                     <td>
-                                        <Link to={`/dashboard/apartments/details/${apartment.id}`}>
+                                        <Link to={`/dashboard/apartments/details/${apartment._id}`}>
                                             <Eye />
                                         </Link>
                                     </td>

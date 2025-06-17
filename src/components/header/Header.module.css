@@ -17,3 +17,20 @@
     align-items: center;
     gap: 1rem;
 }
+
+.criarConta {
+    background-color: #1B58A4;
+    padding: 8px 16px;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.criarConta:hover {
+    background-color: #1c67c2;
+}
+
+.login {
+    display: flex;
+    gap: 1px;
+    align-items: center;
+}

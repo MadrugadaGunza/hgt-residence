@@ -12,7 +12,7 @@ const Banner = () => {
                 apartamentos e aproveite restaurantes, bar, zona de lazer, estacionamento
                 e muito mais. Viva a experiência HGT!
             </p>
-            <Link to='/contact'><Headset className={styles.icon} /> Contactar</Link>
+            {/* <Link to='/contact'><Headset className={styles.icon} /> Contactar</Link> */}
         </section>
     )
 }

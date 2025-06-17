@@ -52,6 +52,17 @@ img {
 
 .apartment .body .description {
   margin: 16px 0;
+  text-align: justify;
+  line-height: 22px;
+}
+
+.apartment a {
+  color: #333;
+  font-size: 24px;
+}
+
+.apartment a:hover {
+  color: #1B58A4;
 }
 
 .home-title {
@@ -92,11 +103,33 @@ img {
 }
 
 .form-group textarea {
-  min-height: 194px;
+  min-height: 104px;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #999;
+  font-size: 16px;
+}
+
+.form-group select {
+  display: block;
+  width: 100%;
+  padding: 14px 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  box-sizing: border-box;
+  color: #333;
+  background-color: #fff;
+}
+
+.btn-reserva {
+  background-color: #1B58A4;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
   font-size: 16px;
 }
