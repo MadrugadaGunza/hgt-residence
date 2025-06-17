@@ -57,3 +57,14 @@
     padding: 8px 21px;
     border-radius: 8px;
 }
+
+.btnActive {
+    background-color: #1B58A4;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}

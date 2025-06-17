@@ -1,32 +1,3 @@
-.about {
-    padding: 90px 125px 0 125px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.about img {
-    max-width: 100%;
-}
-
-.about article {
-    display: flex;
-    flex-direction: column;
-}
-
-.about article h1 {
-    margin-bottom: 16px;
-    font-size: 44px;
-    color: #333;
-}
-
-.about article p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #555;
-    text-align: justify;
-}
-
 /* restarant */
 .restarantTitle {
     margin-bottom: 16px;
@@ -79,6 +50,11 @@
     gap: 20px;
 }
 
+.restarant img {
+    width: 100%;
+    height: 200px;
+}
+
 .lazer {
     padding: 0 125px 90px 125px;
     display: grid;
@@ -91,4 +67,72 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+}
+
+.lazer img,
+.park img {
+    width: 100%;
+    height: 250px;
+}
+
+@media (max-width: 1070px) {
+    .restarant {
+        padding: 0 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .lazer {
+        padding: 0 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .park {
+        padding: 0 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .restarant {
+        padding: 0 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .lazer {
+        padding: 0 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .park {
+        padding: 0 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 40rem) {
+    .lazer {
+        padding: 0 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+
+    .park {
+        padding: 0 20px 20px 20px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
 }

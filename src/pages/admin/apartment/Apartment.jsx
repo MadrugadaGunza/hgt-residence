@@ -21,7 +21,8 @@ const Apartment = () => {
         fetchData();
     }, []);
 
-    const availableApartments = data.filter(item => item.availability === false).length;
+    const reservados = data.filter(item => item.availability === false).length;
+    const livres = data.filter(item => item.availability === true).length;
 
 
     return (
@@ -32,8 +33,8 @@ const Apartment = () => {
                         <HousePlus className={styles.icon} />
                     </span>
                     <div>
-                        <p>Reservas</p>
-                        <h5>350</h5>
+                        <p>Apartamentos</p>
+                        <h5>{data && data.length}</h5>
                     </div>
                 </article>
                 <article className={styles.card}>
@@ -42,7 +43,7 @@ const Apartment = () => {
                     </span>
                     <div>
                         <p>Livres</p>
-                        <h5>350</h5>
+                        <h5>{livres}</h5>
                     </div>
                 </article>
                 <article className={styles.card}>
@@ -51,7 +52,7 @@ const Apartment = () => {
                     </span>
                     <div>
                         <p>Reservas</p>
-                        <h5>{availableApartments}</h5>
+                        <h5>{reservados}</h5>
                     </div>
                 </article>
             </div>

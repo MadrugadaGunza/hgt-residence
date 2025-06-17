@@ -6,6 +6,7 @@ const Details = () => {
     const [data, setData] = React.useState();
     const [loading, setLoading] = React.useState(true);
     const [error, setError] = React.useState('');
+    const [active, setActive] = React.useState(data && data.availability);
     const { id } = useParams();
 
     React.useEffect(() => {
@@ -15,7 +16,7 @@ const Details = () => {
                 setError('');
                 const response = await fetch(`http://localhost:8000/api/apartment/details/${id}`);
 
-                if (!response.ok)  throw new Error('Erro ao buscar detalhes do apartamento');
+                if (!response.ok) throw new Error('Erro ao buscar detalhes do apartamento');
 
                 const result = await response.json();
                 console.log('Detalhes do apartamento:', result.data);
@@ -27,7 +28,17 @@ const Details = () => {
             }
         };
         fetchApartmentDetails();
-    }, [id]);
+    }, [id, active]);
+
+    const handleActive = async (id) => {
+        const token = window.localStorage.getItem('token');
+        const response = await fetch(`http://localhost:8000/api/apartment/active/${id}`, {
+            method: 'PATCH',
+            headers: { Authorization: `Bearer ${token}` }
+        });
+        const result = await response.json();
+        setActive(result.data.availability);
+    }
 
     if (loading) return <p style={{ padding: 16 }}>Carregando...</p>;
     if (error) return <p style={{ padding: 16 }}>{error}</p>;
@@ -45,6 +56,7 @@ const Details = () => {
                             (<span className={styles.sim}>Sim</span>) :
                             (<span className={styles.nao}>Não</span>)}
                     </p>
+                    <button className={styles.btnActive} onClick={() => handleActive(id)}>{active == true ? 'Desativar' : 'Activar'}</button>
                 </div>
             </article>
         </section>

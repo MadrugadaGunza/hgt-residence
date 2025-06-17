@@ -6,6 +6,7 @@
     padding: 20px 130px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    position: relative;
 }
 
 .header h1 {
@@ -25,6 +26,12 @@
     border-radius: 8px;
 }
 
+.blockLogin {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
 .criarConta:hover {
     background-color: #1c67c2;
 }
@@ -33,4 +40,66 @@
     display: flex;
     gap: 1px;
     align-items: center;
+}
+
+.btnMobile {
+    background-color: #1c67c2;
+    padding: 10px 12px 8px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+.blockMobile {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 84px;
+    z-index: 99;
+    width: 100%;
+}
+
+.blockMobile ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.blockLoginMobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 1070px) {
+    .header {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    .header ul {
+        display: none;
+    }
+
+    .header .blockLogin {
+        display: none;
+    }
+
+    .btnMobile {
+        display: block;
+    }
 }

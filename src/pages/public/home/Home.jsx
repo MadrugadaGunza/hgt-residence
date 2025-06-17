@@ -1,13 +1,27 @@
 import styles from './Home.module.css'
 import React from 'react'
-import Banner from '../../../components/banner/Banner';
-import image from '../../../assets/hgt-banner-compress.jpg'
-import image01 from '../../../assets/rest01.jpg'
-import image02 from '../../../assets/rest02.jpg'
-import image03 from '../../../assets/rest03.jpg'
-import image04 from '../../../assets/rest04.jpg'
-import { Beer, Utensils } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Banner from '../../../components/banner/Banner';
+// image food
+import image01 from '../../../assets/food-01.jpg'
+import image02 from '../../../assets/food-02.jpg'
+import image03 from '../../../assets/food-03.jpg'
+import image04 from '../../../assets/food-04.jpg'
+// image lazer
+import imageLazer01 from './../../../assets/lazer-01.jpg';
+import imageLazer02 from './../../../assets/lazer-02.jpg';
+import imageLazer03 from './../../../assets/lazer-03.jpg';
+import imageLazer04 from './../../../assets/lazer-04.jpg';
+import imageLazer05 from './../../../assets/lazer-05.jpg';
+import imageLazer06 from './../../../assets/lazer-06.jpg';
+// image parking
+import imageParking01 from './../../../assets/parking-01.jpg'
+import imageParking02 from './../../../assets/parking-02.jpg'
+import imageParking03 from './../../../assets/parking-03.jpg'
+import imageParking04 from './../../../assets/parking-07.jpg'
+import imageParking05 from './../../../assets/parking-05.jpg'
+import imageParking06 from './../../../assets/parking-06.jpg'
+import { Beer, Utensils } from 'lucide-react';
 
 const Home = () => {
     const [data, setData] = React.useState([]);
@@ -58,21 +72,19 @@ const Home = () => {
                     <div>
                         <ul>
                             <li><Utensils className={styles.icon} />Mufete</li>
-                            <li><Utensils className={styles.icon} />Calulu</li>
-                            <li><Utensils className={styles.icon} />Filé</li>
-                            <li><Utensils className={styles.icon} />Mufete</li>
-                            <li><Utensils className={styles.icon} />Calulu</li>
-                            <li><Utensils className={styles.icon} />Filé</li>
-                            <li><Utensils className={styles.icon} />Mufete</li>
+                            <li><Utensils className={styles.icon} />Calulu Peixe</li>
+                            <li><Utensils className={styles.icon} />Filé de Carne Grelhada</li>
+                            <li><Utensils className={styles.icon} />Pudim de leite</li>
+                            <li><Utensils className={styles.icon} />Bacalhau com natas</li>
+                            <li><Utensils className={styles.icon} />Frutas da época</li>
                         </ul>
                         <ul>
-                            <li><Beer className={styles.icon} />Mufete</li>
-                            <li><Beer className={styles.icon} />Calulu</li>
-                            <li><Beer className={styles.icon} />Filé</li>
-                            <li><Beer className={styles.icon} />Mufete</li>
-                            <li><Beer className={styles.icon} />Calulu</li>
-                            <li><Beer className={styles.icon} />Filé</li>
-                            <li><Beer className={styles.icon} />Mufete</li>
+                            <li><Beer className={styles.icon} />Sumo natural de maracujá</li>
+                            <li><Beer className={styles.icon} />Água fresca</li>
+                            <li><Beer className={styles.icon} />Coca-Cola</li>
+                            <li><Beer className={styles.icon} />Prite</li>
+                            <li><Beer className={styles.icon} />Fanta</li>
+                            <li><Beer className={styles.icon} />Água com gás</li>
                         </ul>
                     </div>
                 </article>
@@ -86,22 +98,22 @@ const Home = () => {
             {/* Lazer */}
             <h1 className={styles.restarantTitle}>Lazer</h1>
             <div className={styles.lazer}>
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
+                <img src={imageLazer01} alt="about-image" />
+                <img src={imageLazer02} alt="about-image" />
+                <img src={imageLazer03} alt="about-image" />
+                <img src={imageLazer04} alt="about-image" />
+                <img src={imageLazer05} alt="about-image" />
+                <img src={imageLazer06} alt="about-image" />
             </div>
             {/* Estancionamento */}
             <h1 className={styles.restarantTitle}>Estancionamento</h1>
             <div className={styles.park}>
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
-                <img src={image} alt="about-image" />
+                <img src={imageParking01} alt="about-image" />
+                <img src={imageParking02} alt="about-image" />
+                <img src={imageParking03} alt="about-image" />
+                <img src={imageParking04} alt="about-image" />
+                <img src={imageParking05} alt="about-image" />
+                <img src={imageParking06} alt="about-image" />
             </div>
         </section>
     )

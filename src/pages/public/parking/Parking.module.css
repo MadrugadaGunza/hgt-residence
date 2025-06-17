@@ -1,0 +1,42 @@
+.parking {
+    padding: 20px 125px;
+}
+
+.parking h1 {
+    text-align: center;
+    color: #333;
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+.parking p {
+    text-align: justify;
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 16px;
+    line-height: 24px;
+}
+
+.blockParking {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+@media (max-width: 1070px) {
+    .parking {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 950px) {
+    .blockParking {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 40rem) {
+    .blockParking {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

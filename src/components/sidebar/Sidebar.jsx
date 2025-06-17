@@ -21,9 +21,6 @@ const Sidebar = () => {
                 <li><NavLink to='/dashboard' end><LayoutDashboard className={styles.icon} />Dashboard</NavLink></li>
                 <li><NavLink to='/dashboard/clients'><Users className={styles.icon} />Clientes</NavLink></li>
                 <li><NavLink to='/dashboard/apartments'><Home className={styles.icon} />Apartamentos</NavLink></li>
-                <li><NavLink to='/dashboard/restaurant'><Utensils className={styles.icon} />Restaurante</NavLink></li>
-                <li><NavLink to='/dashboard/park'><Car className={styles.icon} />Estancionamento</NavLink></li>
-                <li><NavLink to='/dashboard/razer'><Sofa className={styles.icon} />Lazeres</NavLink></li>
             </ul>
             <button className={styles.btnSair} onClick={handleLogout}>
                 <LogOutIcon className={styles.icon} /> Saír

@@ -13,6 +13,8 @@ import Profile from './pages/admin/profile/Profile';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Index from './pages/public/apatments/Index';
+import Restaurante from './pages/public/restaurante/Restaurante';
+import Parking from './pages/public/parking/Parking';
 
 const App = () => {
   return (
@@ -35,6 +37,8 @@ const AppContent = () => {
         <Route path='/' element={<Home />} />
         <Route path='/apartments/*' element={<Index />} />
         <Route path='/profile' element={<Profile />} />
+        <Route path='/restaurant' element={<Restaurante />} />
+        <Route path='/parking' element={<Parking />} />
         <Route path='/auth/*' element={<Auth />} />
         <Route path='/dashboard/*' element={<Admin />} />
       </Routes>

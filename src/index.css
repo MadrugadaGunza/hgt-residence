@@ -36,6 +36,23 @@ img {
   padding: 0 125px 90px 125px;
 }
 
+@media (max-width: 1070px) {
+  .block-apartments {
+    padding: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 40rem) {
+  .block-apartments {
+    padding: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+}
+
 .apartment {
   background-color: #ffff;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
